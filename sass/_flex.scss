@@ -1,0 +1,68 @@
+// css for flexbox
+
+// this is the flex container
+.row {
+	display: -webkit-flex; /*targets chrome & safari*/
+	display: -ms-flexbox; /*targets IE10*/
+	display: flex;
+	flex-flow: row wrap;
+	flex: 0 1 auto;
+	// background-color: red;
+	justify-content: center;
+}
+// individual units of content as flex items
+// [class*='col-']{
+// 	padding: 0.5em;
+// }
+#grid [class*='col-'] {
+	border: 1px solid lightgrey;
+}
+#flex [class*='col-'] [class*='col-'] {
+	border: 1px solid lightgrey;
+}
+// 6 col grid system, combinations of columns will add up to 90%
+.col-1 {
+	// flex-basis: 15%;
+	flex: 0 0 15%;
+}
+.col-2 {
+	flex: 0 0 30%;
+}
+.col-3 {
+	flex: 0 0 45%; 
+}
+.col-4 {
+	flex: 0 0 60%;
+}
+.col-5 {
+	flex: 0 0 75%;
+}
+.col-6 {
+	flex: 0 0 90%;
+}
+.col-push {
+	order: 1
+}
+.col-pull {
+	order: -1
+}
+.col-jump {
+	order: 0;
+}
+.jumper {
+	background-color: #b3ffff;
+}
+.jumped {
+	background-color: #b3ffb3;
+}
+
+@media (max-width: 900px) {
+	[class*='col-']{
+		flex: 0 0 90%;
+	}
+}
+@media (max-width: 1000px) {
+	.col-jump {
+		order: -1;
+	}
+}

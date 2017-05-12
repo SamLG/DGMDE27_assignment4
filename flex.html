@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flex</title>
+	<link href="css/main.css" rel="stylesheet">
+</head>
+<body id="flex">
+	<div class="row">
+		<header class="col-6">
+			<h1>Let's Learn Page Layout Technologies</h1>
+			<i>(This page is laid out with Flexbox)</i>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="flex.html">Flexbox</a></li>
+					<li><a href="grid.html">Grid</a></li>
+					<li><a href="mondrian.html">Mondrian</a></li>
+				</ul>
+			</nav>
+		</header>	
+	</div>	
+	<div class="row"> 
+		<main class="col-4">
+			<h2>Flexbox</h2>
+			<blockquote><p>I think that it [flexbox] is finally here for layouts. How do I know that? because I am watching what is going on in the industry and one of my key indicators is what is in the responsive design frameworks.<cite> - Jen Kramer</cite></p></blockquote>
+			<p>Flexbox was created to replace our css float hacks and table layouts. Floating having originally been made for images, and tables were obviously originally made for organizing tables of information. Flexbox is a means of arranging elements with greater ease, faster, and with more immediate options. It also automatically makes children the same height, as you can see in "The Basics of Flexbox" below and with the sidebar in relation to this main content; both are outlined with a dashed line.</p>
+			<p>However it was not made for page layouts and even one of the main writers for Flexbox specifications, believes this.</p>
+			<blockquote>
+				<p>It [flexbox] can only deal with one-dimensional flows of elements, so certain types of layout changes that break from those simple notions can create a cascade of changes as you suddenly need to nest multiple flexboxes that are only positioning two or three elements. ... Flexboxes are great for a lot of things, and I think I'm going to be powering them up a little to make them even better, but they are not the correct solution for page layout.<cite> - Tab Atkins Jr. <a href="http://www.xanthir.com/blog/b4580">>>Read his article on the issue<<</a></cite></p>
+			</blockquote>
+			<p>So we can turn to flexbox to address some of our layout needs, but only for simplistic pages. Therefore there are better options for page layouts, or at least one. <a href="grid.html">>>See CSS Grid<<</a></p>
+			<section>
+				<h3>The Basics of Flexbox</h3>
+				<ul class="row">
+					<!-- all children that I don't want to change order must also get reordered to remain in their relative position to .jumper -->
+					<li class="col-3 col-jump">There is a <b>flex container</b> and <b>flex items</b>. This is a simple parent child relationship. The children are arranged along a main (x) axis and a cross (y) axis.</li>
+					
+					<li class="col-3 col-jump">The element that will be the <b>flex container</b> is assigned: <br><code>/*for chrome &amp; safari*/ <br>display: -webkit-flex; <br>/*for IE10*/ <br>display: -ms-flexbox; <br>display: flex;</code> <br>or<br><code>/*for chrome &amp; safari*/ <br>display: -webkit-inline-flex; <br>/*for IE10*/ <br>display: -ms-inline-flexbox; <br>display: inline-flex</code> <br><em>This is applied to the container.</em></li>
+					
+					<li class="col-3 col-jump"><b><code>flex-direction</code></b> designates how the children will sit in relation to the main axis and whether they will be reversed or not. It takes one of the following values: <br><code>row | row-reverse | column | column-reverse</code> <br><em>This is applied to the container.</em></li>
+					
+					<li class="col-3 col-jump"><b><code>justify-content</code></b> delegates the spacing of the children along the main axis of the container. It takes one of the following values: <br><code>flex-start | flex-end | center | space-between | space-around | space-evenly</code> <br><em>This is applied to the container.</em></li>
+					
+					<li class="col-3 col-jump"><b><code>align-items</code></b>, like <code>justify-content</code>, delegates spacing of the children, but it positions children vertically in their container along the cross axis. It takes one of the following values: <br><code>flex-start | flex-end | center | baseline | stretch</code> <br><em>This is applied to the container.</em></li>
+					
+					<li class="col-3 col-jump"><b><code>flex-wrap</code></b> delegates whether children will remain on one line or be allowed to wrap and in what order. It takes one of the following values: <br><code>nowrap | wrap | wrap-reverse</code> <br>For <code>wrap-reverse</code> each line is in reverse, not the overall children. <br><em>This is applied to the container.</em></li>
+
+					<li class="col-3 col-jump"><b><code>flex-flow</code></b> is a shorthand way of assigning <code>flex-direction</code> and <code>flex-wrap</code> in one line. It takes either just a <code>flex-direction</code> value || a <code>flex-wrap</code> value or it takes the value for <code>flex-direction</code> followed by the value for <code>flex-wrap</code> separated by a space. <br><em>This is applied to the container.</em></li>
+
+					<li class="col-3 jumped"><b><code>align-self</code></b> allows individual children to override the <code>align-items</code> on the container. It takes one of the following values: <br><code>auto | flex-start | flex-end | center | baseline | stretch</code> <br><em>This is applied to the child.</em></li>
+					
+					<li class="col-3 col-jump jumper"><b><code>order</code></b> is like push and pull in Bootstrap and other front-end frameworks, and changes the ordering of children. It takes one integer value. Higher valued integers are pushed back and lower valued integers are pulled forward. For example if you narrow your browser window (unless you are on mobile), I will change order, one to the left in front of my green sibling. <br><em>This is applied to the child.</em></li>
+
+					<li class="col-3"><b><code>flex-grow</code></b> indicates how much space a child should take up in the container relative to other children when there isn't enough space for all of the children. It takes either an integer value. The higher the integer value the more room it takes up. <br><em>This is applied to the child.</em></li>
+
+					<li class="col-3"><b><code>flex-shrink</code></b> is basically the opposite of flex-grow. It indicates how little space a child should take up in the container relative to other children when there isn't enough space for all of the children. It takes an integer value. The higher the integer value the less room it takes up. <br><em>This is applied to the child.</em></li>
+
+					<li class="col-3"><b><code>flex-basis</code></b> indicates the initial size of the child. It is basically like the width used when setting up a custom grid system. It takes a width value... but generally percentage makes the most sense, because you can very easily set the percent of the container the child will take up. It can also take the value <code>content</code>, which is basically the automatic sizing flexbox would have given that child anyways. <br><em>This is applied to the child.</em></li>
+
+					<li class="col-3"><b><code>flex</code></b> is shorthand for assigning <cpde>flex-grow</cpde>, <code>flex-shrink</code>, and <code>flex-basis</code> all at once. It takes either <code>none</code> indication <code>0 0 auto</code> or a <code>flex-grow</code> value, <code>flex-shrink</code> value, and <code>flex-basis</code> value all separated by spaces. <br><em>This is applied to the child.</em></li>
+				</ul>
+				<p>(Information given gathered in part from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">>>MDN Documentation<<</a>)</p>
+			</section>
+		</main>
+		<aside class="col-2">
+			<h2>Additional Resources</h2>
+			<ul>
+				<li>Check out Jen Kramer's presentation on flexbox <br><a href="https://www.slideshare.net/jen4web/flexbox-coming-to-a-browser-near-you"> >>Learn More<<</a></li>
+				<li>Check out the MDN Documentation <br><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">>>MDN Documentation<<</a></li>
+				<li>Check out Tab Atkins Jr.'s website and don't be alarmed by his homepage. <br><a href="http://www.xanthir.com/">>>Tab's Site<<</a></li>
+			</ul>
+		</aside>
+	</div>
+	<footer class="row">
+		<p class="col-6">&copy; Sam Grise 2017</p>
+	</footer>
+</body>
+</html>

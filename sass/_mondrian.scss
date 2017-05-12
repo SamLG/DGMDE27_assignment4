@@ -1,0 +1,293 @@
+#mondrian {
+  p {
+    width: 50%;
+    margin: 0 auto;
+  }
+  /* transparent background hack: https://css-tricks.com/snippets/css/transparent-background-images/ */
+  .wrapper {
+    margin: 0 auto;
+    // large dimensions
+    // I halved the design specs to allow for visibility of design on one page
+    // width: 848px;
+    // height: 900px;
+    width: 424px;
+    height: 450px;
+    display: block;
+    position: relative;
+    display: grid;
+    // large format
+    // grid-template-rows: 18px 39px 287px 95px 227px 129px 20px;
+    // grid-template-columns: 73px 292px 230px 73px 126px;
+    // grid-gap: 14px 13px;
+    grid-template-rows: 9px 19.5px 143.5px 47.5px 113.5px 64.5px 9px;
+    grid-template-columns: 36.5px 146px 115px 36.5px 63px;
+    grid-gap: 7px 6.5px;
+    background-color: black;
+    margin-bottom: 1em;
+  }
+  // for setting up painting
+  // .wrapper::after {
+  //   content: "";
+  //   background: url(../848px-Tableau_I,_by_Piet_Mondriaan-rotated.png) no-repeat;
+  //   opacity: 0.5;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   position: absolute;
+  //   z-index: -1;
+  // }
+
+  div {
+    border: 1px solid black;
+    background-color: #f4f3f0;
+    text-align: center;
+  }
+  div div {
+    transition: background-color 2s;    
+  }
+  .a {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    background-color: red;
+    color: white;
+    font-size: 1.7em;
+    line-height: .3em;
+    &:hover {
+      background-color: #ffe6e6;
+    }
+  }
+  .b {
+    grid-column: 1 / 3;
+    grid-row: 2 / 5;
+    font-size: 2.5em;
+    padding-top: 1.5em;
+  }
+  .c {
+    grid-column: 3 / 5;
+    grid-row: 1 / 5;
+    font-size: 2.5em;
+    padding-top: 2em;
+  }
+  .d {
+    grid-column: 5;
+    grid-row: 1 / 3;
+    background-color: black;
+    color: white;
+    font-size: 2.5em;
+  }
+  .e {
+    grid-column: 5;
+    grid-row: 3 / 4;
+    font-size: 2.5em;
+    padding-top: 2em;
+  }
+  .f {
+    grid-column: 5;
+    grid-row: 4 / 5;
+    font-size: 2.5em;
+  }
+  .g {
+    grid-column: 1 / 2;
+    grid-row: 5 / 8; 
+    font-size: 2.5em;
+    padding-top: 2em; 
+  }
+  .h {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    background-color: darkblue;
+    color: white;
+    font-size: 2.5em;
+    padding-top: 1em;
+    &:hover {
+      background-color: lightblue;
+    }
+  }
+  .i {
+    grid-column: 3 / 5;
+    grid-row: 5 / 7;
+    font-size: 2.5em;
+    padding-top: 1em;
+  }
+  .j {
+    grid-column: 5;
+    grid-row: 5 / 8;
+    background-color: yellow;
+    font-size: 2.5em;
+    padding-top: 1em;
+    &:hover {
+      background-color: #ffffe6;
+    }
+  }
+  .k {
+    grid-column: 2 / 3;
+    grid-row: 6 / 7;
+    font-size: 2.5em;
+    padding-top: .5em;
+  }
+  .l {
+    grid-column: 2 / 4;
+    grid-row: 7;
+    font-size: 1.2em;
+    line-height: .3em;
+  }
+  .m {
+    grid-column: 4 / 5;
+    grid-row: 7;  
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    line-height: 0em;
+  }
+  @media (min-device-width: 750px) and (max-device-width: 950px)  {
+    .wrapper {
+      // large version
+      // grid-template-rows: 20px 129px 227px 95px 287px 39px 18px;
+      // grid-template-columns: 126px 73px 230px 292px 73px;
+      // grid-gap: 14px 13px;
+      grid-template-rows: 10px 64.5px 113.5px 47.5px 143.5px 19.5px 9px;
+      grid-template-columns: 63px 36.5px 115px 146px 34px;
+      grid-gap: 6.5px 7px;
+    }
+    .a {
+      grid-column: 4 / 6;
+      grid-row: 7;
+    }
+    .b {
+      grid-column: 4 / 6;
+      grid-row: 4 / 7;
+    }
+    .c {
+      grid-column: 2 / 4;
+      grid-row: 4 / 8;
+    }
+    .d {
+      grid-column: 1;
+      grid-row: 6 / 8;
+    }
+    .e {
+      grid-column: 1;
+      grid-row: 5 / 6;
+    }
+    .f {
+      grid-column: 1;
+      grid-row: 4 / 5;
+    }
+    .g {
+      grid-column: 5 / 6;
+      grid-row: 1 / 4; 
+    }
+    .h {
+      grid-column: 4 / 5;
+      grid-row: 3 / 4;
+    }
+    .i {
+      grid-column: 2 / 4;
+      grid-row: 2 / 4;
+    }
+    .j {
+      grid-column: 1;
+      grid-row: 1 / 4;
+    }
+    .k {
+      grid-column: 4 / 5;
+      grid-row: 2 / 3;
+    }
+    .l {
+      grid-column: 3 / 5;
+      grid-row: 1;
+    }
+    .m {
+      grid-column: 2 / 3;
+      grid-row: 1;  
+    }
+  }
+}
+// styling for js implentation of the above media query
+button {
+  font-size: .9em;
+  display: block;
+  width: auto;
+  padding: .5em;
+  border-radius: .5em;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  &:hover {
+    background-color: lightblue;
+  }
+  &:active {
+    background-color: lightblue;
+    transform: translate(0,.2em);
+  }
+}
+#mondrian .reverseWrapper {
+      grid-template-rows: 10px 64.5px 113.5px 47.5px 143.5px 19.5px 9px;
+      grid-template-columns: 63px 36.5px 115px 146px 34px;
+      grid-gap: 6.5px 7px;
+      .reverse_0 { //a
+        grid-column: 4 / 6;
+        grid-row: 7;
+        line-height: 0;
+      }
+      .reverse_1 { //b
+        grid-column: 4 / 6;
+        grid-row: 4 / 7;
+      }
+      .reverse_2 { //c
+        grid-column: 2 / 4;
+        grid-row: 4 / 8;
+      }
+      .reverse_3 { //d
+        grid-column: 1;
+        grid-row: 6 / 8;
+        line-height: .7em;
+      }
+      .reverse_4 { //e
+        grid-column: 1;
+        grid-row: 5 / 6;
+      }
+      .reverse_5 { //f
+        grid-column: 1;
+        grid-row: 4 / 5;
+      }
+      .reverse_6 { //g
+        grid-column: 5 / 6;
+        grid-row: 1 / 4; 
+      }
+      .reverse_7 { //h
+        grid-column: 4 / 5;
+        grid-row: 3 / 4;
+      }
+      .reverse_8 { //i
+        grid-column: 2 / 4;
+        grid-row: 2 / 4;
+      }
+      .reverse_9 { //j
+        grid-column: 1;
+        grid-row: 1 / 4;
+      }
+      .reverse_10 { //k
+        grid-column: 4 / 5;
+        grid-row: 2 / 3;
+      }
+      .reverse_11 { //l
+        grid-column: 3 / 5;
+        grid-row: 1;
+        line-height: .2em;
+      }
+      .reverse_12 { //m
+        grid-column: 2 / 3;
+        grid-row: 1; 
+        line-height: .5em; 
+      }
+}
+
+// media query
+@media (max-width: 900px) {
+  #mondrian {
+    p {
+      width: 80%;
+    }
+  }
+}

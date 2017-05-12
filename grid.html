@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Grid</title>
+	<link href="css/main.css" rel="stylesheet">
+</head>
+<body id="grid">
+	<header>
+		<h1>Let's Learn Page Layout Technologies</h1>
+		<i>(This page is laid out with Grid)</i>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="flex.html">Flexbox</a></li>
+				<li><a href="grid.html">Grid</a></li>
+				<li><a href="mondrian.html">Mondrian</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h2>Grid</h2>
+		<blockquote><p>For years, front-end developers fumbled with hacking floats for layouts, often as part of a grid system. Media queries made these float-based grids more responsive to different screen dimensions, but unfortunately, the behaviors weren't always granular enough to work well with complex layouts. Now with the new Grid specification in CSS4, we can easily define behaviors for each cell in our layouts in two dimensions.<cite> - <a href="https://2016.fullstackfest.com/speakers/jen-kramer/">Jen Kramer</a></cite></p></blockquote>
+		<p>CSS Grid has been in the works for a while, and going through many iterations, but only recently have we begun to see it adopted by web browsers. </p>
+		<section>
+			<h3>The Basics of CSS Grid</h3>
+			<p>Grid is more complex than Flexbox in that it has multiple ways to do the same thing, which can get confusing. Here I will focusing on the line based placements.</p>
+			<!-- flex area in Grid layout -->
+			<ul class="row">
+				<li class="col-3">At it's most basic there is a <b>containing element</b> and <b>items</b> within. This relationship is capable of more dynamic layouts than flexbox, dealing in both columns and rows. A <b>containing element</b> could also be an <b>item</b></li>
+				
+				<li class="col-3">The element that will be the <b>container</b> or <b>wrapper</b> is assigned: <br><code>display: grid;</code><br>(prefixing is a good idea)</li>
+
+				<li class="col-3"><b><code>grid-column</code></b> is shorthand for <code>grid-column-start</code> and <code>grid-column-end</code>. It takes the integer value of <code>grid-column-start</code> / <code>grid-column-end</code> separated by a / <br><em>This is applied to the items.</em></li>
+
+				<li class="col-3"><b><code>grid-row</code></b> is shorthand for <code>grid-row-start</code> and <code>grid-row-end</code>.It takes the integer value of <code>grid-row-start</code> / <code>grid-row-end</code> separated by a / <br><em>This is applied to the items.</em></li>
+
+				<li class="col-3"><br><br><b>More terms to come later.</b><br><br><br></li>
+
+				<!-- <li class="col-3"><b><code>grid-gap</code></b></li>
+
+				<li class="col-3"><b><code>grid-area</code></b></li>
+
+
+				<li class="col-3"><b><code>grid-auto-flow</code></b></li>
+
+				<li class="col-3"><b><code>grid-auto-rows</code></b></li>
+				
+				<li class="col-3"><b><code>grid-template</code></b><br><em>This is applied to the container.</em></li>
+
+				<li class="col-3"><b><code>grid-template-areas</code></b><br><em>This is applied to the container.</em></li>
+
+				<li class="col-3"><b><code>grid-template-columns</code></b></li>
+
+				<li class="col-3"><b><code>grid-template-rows</code></b></li> -->
+			</ul>
+			<p>(Information given gathered in part from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">>>MDN Documentation<<</a>)</p>
+		</section>
+	</main>
+	<aside>
+		<h2>Additional Resources</h2>		
+
+		<ul>
+			<li>Go right to the source with the MDN documentation for CSS Grid Layout <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">>>Learn More<<</a></li>
+			<li>CSS Tricks has a great article to learn about CSS Grid Layout<a href="https://css-tricks.com/snippets/css/complete-guide-grid/">>>Learn More<<</a></li>
+			<li>Check out Jen Kramer's thought and watch her talk on CSS Grid Layout <a href="https://2016.fullstackfest.com/speakers/jen-kramer/">>>Learn More<<</a></li>
+		</ul>
+		<i>(To demonstrate the ease of positioning with Grid, this section changes position with the Examples section between 901px and 1100px)</i>
+	</aside>
+	<aside>
+		<h2>Examples</h2>
+		
+		<ul>
+			<li>Go right to the source with the MDN documentation for CSS Grid Layout <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">>>Learn More<<</a></li>
+			<li>CSS Tricks has a great article to learn about CSS Grid Layout<a href="https://css-tricks.com/snippets/css/complete-guide-grid/">>>Learn More<<</a></li>
+			<li>Check out Jen Kramer's thought and watch her talk on CSS Grid Layout <a href="https://2016.fullstackfest.com/speakers/jen-kramer/">>>Learn More<<</a></li>
+		</ul>
+		<i>(To demonstrate the ease of positioning with Grid, this section changes position with the Additional Resources section, between 901px and 1100px)</i>
+	</aside>
+	<footer>
+		<p>&copy; Sam Grise 2017</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,202 @@
+@import "_flex.scss";
+@import "_grid.scss";
+@import "_mondrian.scss";
+@import "_animation.scss";
+
+/* border box by Paul Irish http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+	box-sizing: border-box;
+  	margin: 0;
+	padding: 0;
+	bottom: 0;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif; 
+	min-height: 101vh; //show scrollbar by making page longer than window, to keep uniform look through pages
+	margin: 0 auto;
+	&#home, &#mondrian {
+		width: 90%;
+	}
+}
+header {
+	overflow: auto;
+	background-color: lightgrey;
+	padding-left: 5em;
+	padding-right: 5em;
+}
+h1 {
+	margin-bottom: .1em;
+}
+ul{
+		list-style-type: none;
+		overflow: auto;
+	}
+	li {
+		float: left;
+	}
+	a {
+		text-decoration: none;
+		color: blue;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+nav {
+	float: right;
+	margin: 0 auto;
+	li {
+		@extend li;
+		padding: 0.5em;
+		margin-right:3em;
+	}
+	a {
+		font-weight: 600;
+		color: black;
+		@extend a;
+		&:hover {
+			background-color: lightblue;
+		}
+	}
+}
+// .container {
+// 	width: 90%;
+// 	margin: 0 auto;
+// }
+// set styling for code snippets
+code {
+	font-size: larger;
+	font-weight: 600;
+}
+footer {
+	width: 100%;
+	text-align: center;
+	border: 1px dashed lightgrey;
+}
+main {
+	border: 1px dashed lightgrey;
+	min-height: 70vh;
+}
+#home {
+	main > div {
+		// width: 45em;
+		margin: 0 auto;
+		img {
+			// float: left;
+			transition: filter 3s ease 2s;
+			width: 80%;
+		}
+		p {
+			font-size: 0em;
+			transition: font 7s;
+		}
+		p:first-of-type {
+			font-size: .8em;
+		}
+	}
+	div:hover {
+		img {
+			filter: blur(1px) grayscale(100%);
+		}
+		p:last-of-type {
+			font-size: .7em;
+		}
+		p:first-of-type {
+			font-size: 0em;
+		}
+
+	}	
+}
+.media {
+	position: absolute;
+	height: 20%;
+}
+// .media:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
+div img {
+	filter: blur(0px);
+	transition: filter 1s;
+	&:hover {
+		filter: blur(1px);
+	}
+}
+cite {
+	font-size: .5em;
+	line-height: 0; //line height pushed content with the transition of font size
+	transition: font 3s ease .2s;
+	&:hover {
+		font-size: .8em;
+	}
+}
+caption, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: .5em;
+	background-color: white;
+}
+tr:not(:first-child) td:first-child {
+	font-weight: bold;
+}
+table {
+	@extend th;
+	margin: 0 auto;
+	margin-top: 20em;
+	// oddly specifying width and height for transition does not work in this scenario
+	transition: width 2s, ease 2s;
+}
+
+aside {
+	@extend main;
+	li {
+		margin-bottom: 1em;
+	}
+	h2 {
+		text-align: center;
+	}
+}
+
+@media (max-width: 900px) {
+	table {
+		margin-top: 1em;
+		transform: scale(.9);
+	}
+	#home {
+		main > div {
+			width: 80%;
+		}
+	}
+	#words, .construction {
+		display: none
+	};
+	.media {
+		position: relative;
+		height: auto;
+	}
+}
+@media (max-width: 839px) {
+	h1 {
+		transform: scale(.9);
+		margin: 0;
+		padding: 0;
+	}
+	header {
+		margin: 0;
+		padding: 0;
+	}
+}
+@media (min-width: 901px) {
+	i {
+		font-size: 1em;
+		line-height: 0; //line height pushed content with the transition of font size
+		transition: font 3s ease .2s;
+		&:hover {
+			font-size: 1.3em;
+		}
+	}
+}
